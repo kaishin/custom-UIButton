@@ -23,6 +23,16 @@
 		9D5AADB11618F5F90000EF26 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D5AAD8C1618F5F90000EF26 /* Foundation.framework */; };
 		9D5AADB91618F5F90000EF26 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9D5AADB71618F5F90000EF26 /* InfoPlist.strings */; };
 		9D5AADBC1618F5F90000EF26 /* Custom_UIButtonsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5AADBB1618F5F90000EF26 /* Custom_UIButtonsTests.m */; };
+		9D5AADCD161904190000EF26 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D5AADC9161904190000EF26 /* button.png */; };
+		9D5AADCE161904190000EF26 /* button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D5AADCA161904190000EF26 /* button@2x.png */; };
+		9D5AADCF161904190000EF26 /* buttonHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D5AADCB161904190000EF26 /* buttonHighlighted.png */; };
+		9D5AADD0161904190000EF26 /* buttonHighlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D5AADCC161904190000EF26 /* buttonHighlighted@2x.png */; };
+		9D5AADD51619BB250000EF26 /* resizableButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D5AADD11619BB250000EF26 /* resizableButton.png */; };
+		9D5AADD61619BB250000EF26 /* resizableButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D5AADD21619BB250000EF26 /* resizableButton@2x.png */; };
+		9D5AADD71619BB250000EF26 /* resizableButtonHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D5AADD31619BB250000EF26 /* resizableButtonHighlighted.png */; };
+		9D5AADD81619BB250000EF26 /* resizableButtonHighlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D5AADD41619BB250000EF26 /* resizableButtonHighlighted@2x.png */; };
+		9DDA94DF161F4B0F0099D9C3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DDA94DE161F4B0F0099D9C3 /* QuartzCore.framework */; };
+		9DDA94F5161F68C90099D9C3 /* CBLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DDA94F4161F68C90099D9C3 /* CBLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +68,17 @@
 		9D5AADB81618F5F90000EF26 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9D5AADBA1618F5F90000EF26 /* Custom_UIButtonsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Custom_UIButtonsTests.h; sourceTree = "<group>"; };
 		9D5AADBB1618F5F90000EF26 /* Custom_UIButtonsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Custom_UIButtonsTests.m; sourceTree = "<group>"; };
+		9D5AADC9161904190000EF26 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
+		9D5AADCA161904190000EF26 /* button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button@2x.png"; sourceTree = "<group>"; };
+		9D5AADCB161904190000EF26 /* buttonHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonHighlighted.png; sourceTree = "<group>"; };
+		9D5AADCC161904190000EF26 /* buttonHighlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttonHighlighted@2x.png"; sourceTree = "<group>"; };
+		9D5AADD11619BB250000EF26 /* resizableButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resizableButton.png; sourceTree = "<group>"; };
+		9D5AADD21619BB250000EF26 /* resizableButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "resizableButton@2x.png"; sourceTree = "<group>"; };
+		9D5AADD31619BB250000EF26 /* resizableButtonHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resizableButtonHighlighted.png; sourceTree = "<group>"; };
+		9D5AADD41619BB250000EF26 /* resizableButtonHighlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "resizableButtonHighlighted@2x.png"; sourceTree = "<group>"; };
+		9DDA94DE161F4B0F0099D9C3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9DDA94F3161F68C90099D9C3 /* CBLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLayer.h; sourceTree = "<group>"; };
+		9DDA94F4161F68C90099D9C3 /* CBLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DDA94DF161F4B0F0099D9C3 /* QuartzCore.framework in Frameworks */,
 				9D5AAD8B1618F5F90000EF26 /* UIKit.framework in Frameworks */,
 				9D5AAD8D1618F5F90000EF26 /* Foundation.framework in Frameworks */,
 				9D5AAD8F1618F5F90000EF26 /* CoreGraphics.framework in Frameworks */,
@@ -106,6 +128,7 @@
 		9D5AAD891618F5F90000EF26 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9DDA94DE161F4B0F0099D9C3 /* QuartzCore.framework */,
 				9D5AAD8A1618F5F90000EF26 /* UIKit.framework */,
 				9D5AAD8C1618F5F90000EF26 /* Foundation.framework */,
 				9D5AAD8E1618F5F90000EF26 /* CoreGraphics.framework */,
@@ -120,6 +143,8 @@
 				9D5AAD991618F5F90000EF26 /* CBAppDelegate.h */,
 				9D5AAD9A1618F5F90000EF26 /* CBAppDelegate.m */,
 				9D5AADA21618F5F90000EF26 /* MainStoryboard.storyboard */,
+				9DDA94F3161F68C90099D9C3 /* CBLayer.h */,
+				9DDA94F4161F68C90099D9C3 /* CBLayer.m */,
 				9D5AADA51618F5F90000EF26 /* CBViewController.h */,
 				9D5AADA61618F5F90000EF26 /* CBViewController.m */,
 				9D5AAD911618F5F90000EF26 /* Supporting Files */,
@@ -130,6 +155,14 @@
 		9D5AAD911618F5F90000EF26 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9D5AADD11619BB250000EF26 /* resizableButton.png */,
+				9D5AADD21619BB250000EF26 /* resizableButton@2x.png */,
+				9D5AADD31619BB250000EF26 /* resizableButtonHighlighted.png */,
+				9D5AADD41619BB250000EF26 /* resizableButtonHighlighted@2x.png */,
+				9D5AADC9161904190000EF26 /* button.png */,
+				9D5AADCA161904190000EF26 /* button@2x.png */,
+				9D5AADCB161904190000EF26 /* buttonHighlighted.png */,
+				9D5AADCC161904190000EF26 /* buttonHighlighted@2x.png */,
 				9D5AAD921618F5F90000EF26 /* Custom UIButtons-Info.plist */,
 				9D5AAD931618F5F90000EF26 /* InfoPlist.strings */,
 				9D5AAD961618F5F90000EF26 /* main.m */,
@@ -237,6 +270,14 @@
 				9D5AAD9F1618F5F90000EF26 /* Default@2x.png in Resources */,
 				9D5AADA11618F5F90000EF26 /* Default-568h@2x.png in Resources */,
 				9D5AADA41618F5F90000EF26 /* MainStoryboard.storyboard in Resources */,
+				9D5AADCD161904190000EF26 /* button.png in Resources */,
+				9D5AADCE161904190000EF26 /* button@2x.png in Resources */,
+				9D5AADCF161904190000EF26 /* buttonHighlighted.png in Resources */,
+				9D5AADD0161904190000EF26 /* buttonHighlighted@2x.png in Resources */,
+				9D5AADD51619BB250000EF26 /* resizableButton.png in Resources */,
+				9D5AADD61619BB250000EF26 /* resizableButton@2x.png in Resources */,
+				9D5AADD71619BB250000EF26 /* resizableButtonHighlighted.png in Resources */,
+				9D5AADD81619BB250000EF26 /* resizableButtonHighlighted@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +315,7 @@
 				9D5AAD971618F5F90000EF26 /* main.m in Sources */,
 				9D5AAD9B1618F5F90000EF26 /* CBAppDelegate.m in Sources */,
 				9D5AADA71618F5F90000EF26 /* CBViewController.m in Sources */,
+				9DDA94F5161F68C90099D9C3 /* CBLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +489,7 @@
 				9D5AADC11618F5F90000EF26 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9D5AADC21618F5F90000EF26 /* Build configuration list for PBXNativeTarget "Custom UIButtonsTests" */ = {
 			isa = XCConfigurationList;
@@ -455,6 +498,7 @@
 				9D5AADC41618F5F90000EF26 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
