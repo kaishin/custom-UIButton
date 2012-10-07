@@ -1,4 +1,5 @@
 #import "CBViewController.h"
+#import "CBLayer.h"
 
 @interface CBViewController ()
 

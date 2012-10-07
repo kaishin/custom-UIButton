@@ -10,6 +10,13 @@
 
 @implementation CBLayer
 
+#pragma mark - UIButton Overrides
+
++ (CBLayer *)buttonWithType:(UIButtonType)type
+{
+    return [super buttonWithType:UIButtonTypeCustom];
+}
+
 #pragma mark -
 
 - (void)drawRect:(CGRect)rect
@@ -21,9 +28,9 @@
         self.layer.borderWidth = 1;
         self.layer.borderColor = [UIColor colorWithRed:0.77f green:0.43f blue:0.00f alpha:1.00f].CGColor;
         
-        [self setInnerGlow];
-        [self setBackgroundLayer];
-        [self setHighlightBackgroundLayer];
+        [self drawInnerGlow];
+        [self drawBackgroundLayer];
+        [self drawHighlightBackgroundLayer];
     }
 
 
@@ -42,7 +49,7 @@
 
 #pragma mark - Layer setters
 
-- (void)setBackgroundLayer
+- (void)drawBackgroundLayer
 {
     if (!_backgroundLayer)
     {
@@ -61,7 +68,7 @@
     }
 }
 
-- (void)setHighlightBackgroundLayer
+- (void)drawHighlightBackgroundLayer
 {
     if (!_highlightBackgroundLayer)
     {
@@ -79,7 +86,7 @@
     }
 }
 
-- (void)setInnerGlow
+- (void)drawInnerGlow
 {
     if (!_innerGlow)
     {
@@ -114,9 +121,8 @@
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     CGPoint touchPoint = [[touches anyObject] locationInView:self];
-    CGRect testRect = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
     
-    if (CGRectContainsPoint(testRect, touchPoint))
+    if (CGRectContainsPoint(self.bounds, touchPoint))
     {
         _tapped = YES;
         [self setNeedsDisplay];
