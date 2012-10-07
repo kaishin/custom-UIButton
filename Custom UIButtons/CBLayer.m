@@ -2,7 +2,10 @@
 
 @interface CBLayer ()
 
-@property (assign, nonatomic) BOOL setupLayers;
+@property (assign, nonatomic) BOOL tapped, setupLayers;
+@property (strong, nonatomic) CAGradientLayer *backgroundLayer, *highlightBackgroundLayer;
+@property (strong,nonatomic) CALayer *innerGlow;
+
 @end
 
 @implementation CBLayer
@@ -13,79 +16,86 @@
 {
     if (!_setupLayers)
     {
-        [self drawBorder];
-        [self drawInnerGlow];
-        [self drawBackgroundGradient];
-        [self drawHighlightedBackgroundGradient];
+        self.layer.cornerRadius = 4.5f;
+        self.layer.masksToBounds = YES;
+        self.layer.borderWidth = 1;
+        self.layer.borderColor = [UIColor colorWithRed:0.77f green:0.43f blue:0.00f alpha:1.00f].CGColor;
+        
+        [self setInnerGlow];
+        [self setBackgroundLayer];
+        [self setHighlightBackgroundLayer];
     }
 
-    CAGradientLayer *highlightLayer = [self.layer.sublayers objectAtIndex:1];
 
     if (_tapped)
     {
-        highlightLayer.hidden = NO;
+        _highlightBackgroundLayer.hidden = NO;
     }
     
     else
     {
-        highlightLayer.hidden = YES;
+        _highlightBackgroundLayer.hidden = YES;
     }
     
     _setupLayers = YES;
 }
 
-- (void)drawBackgroundGradient
+#pragma mark - Layer setters
+
+- (void)setBackgroundLayer
 {
-    CAGradientLayer *gradient = [CAGradientLayer layer];
-    gradient.frame = self.bounds;
-    gradient.colors = (@[
-                       (id)[UIColor colorWithRed:0.94f green:0.82f blue:0.52f alpha:1.00f].CGColor,
-                       (id)[UIColor colorWithRed:0.91f green:0.58f blue:0.00f alpha:1.00f].CGColor
-                       ]);
-    gradient.locations = (@[
-                          @0.0f,
-                          @1.0f
-                          ]);
-    
-    [self.layer insertSublayer:gradient atIndex:0];
+    if (!_backgroundLayer)
+    {
+        _backgroundLayer = [CAGradientLayer layer];
+        _backgroundLayer.frame = self.bounds;
+        _backgroundLayer.colors = (@[
+                                   (id)[UIColor colorWithRed:0.94f green:0.82f blue:0.52f alpha:1.00f].CGColor,
+                                   (id)[UIColor colorWithRed:0.91f green:0.58f blue:0.00f alpha:1.00f].CGColor
+                                   ]);
+        _backgroundLayer.locations = (@[
+                                      @0.0f,
+                                      @1.0f
+                                      ]);
+        
+        [self.layer insertSublayer:_backgroundLayer atIndex:0];
+    }
 }
 
-- (void)drawHighlightedBackgroundGradient
+- (void)setHighlightBackgroundLayer
 {
-    CAGradientLayer *gradient = [CAGradientLayer layer];
-    gradient.frame = self.bounds;
-    gradient.colors = (@[
-                       (id)[UIColor colorWithRed:0.91f green:0.58f blue:0.00f alpha:1.00f].CGColor,
-                       (id)[UIColor colorWithRed:0.94f green:0.82f blue:0.52f alpha:1.00f].CGColor
-                       ]);
-    gradient.locations = (@[
-                          @0.0f,
-                          @1.0f
-                          ]);
-
-    [self.layer insertSublayer:gradient atIndex:1];
+    if (!_highlightBackgroundLayer)
+    {
+        _highlightBackgroundLayer = [CAGradientLayer layer];
+        _highlightBackgroundLayer.frame = self.bounds;
+        _highlightBackgroundLayer.colors = (@[
+                           (id)[UIColor colorWithRed:0.91f green:0.58f blue:0.00f alpha:1.00f].CGColor,
+                           (id)[UIColor colorWithRed:0.94f green:0.82f blue:0.52f alpha:1.00f].CGColor
+                           ]);
+        _highlightBackgroundLayer.locations = (@[
+                              @0.0f,
+                              @1.0f
+                              ]);
+        [self.layer insertSublayer:_highlightBackgroundLayer atIndex:1];
+    }
 }
 
-- (void)drawInnerGlow
+- (void)setInnerGlow
 {
-    CALayer *innerglow = [CALayer layer];
-    CGRect innerGlowFrame = CGRectMake(self.bounds.origin.x+1, self.bounds.origin.y+1, self.bounds.size.width-2, self.bounds.size.height-2);
-    innerglow.frame = innerGlowFrame;
-    innerglow.cornerRadius= 4.5f;
-    innerglow.borderWidth = 1;
-    innerglow.borderColor = [[UIColor whiteColor] CGColor];
-    innerglow.opacity = 0.5;
-    
-    [self.layer insertSublayer:innerglow atIndex:2];
+    if (!_innerGlow)
+    {
+        _innerGlow = [CALayer layer];
+        CGRect innerGlowFrame = CGRectMake(self.bounds.origin.x+1, self.bounds.origin.y+1, self.bounds.size.width-2, self.bounds.size.height-2);
+        _innerGlow.frame = innerGlowFrame;
+        _innerGlow.cornerRadius= 4.5f;
+        _innerGlow.borderWidth = 1;
+        _innerGlow.borderColor = [[UIColor whiteColor] CGColor];
+        _innerGlow.opacity = 0.5;
+        
+        [self.layer insertSublayer:_innerGlow atIndex:2];
+    }
 }
 
-- (void)drawBorder
-{
-    self.layer.cornerRadius = 4.5f;
-    self.layer.masksToBounds = YES;
-    self.layer.borderWidth = 1;
-    self.layer.borderColor = [UIColor colorWithRed:0.77f green:0.43f blue:0.00f alpha:1.00f].CGColor;
-}
+#pragma mark - Touch event overrides
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -117,6 +127,7 @@
         _tapped = NO;
         [self setNeedsDisplay];
     }
+    
     [super touchesMoved:touches withEvent:event];
 }
 
