@@ -31,6 +31,7 @@
 		9D5AADD61619BB250000EF26 /* resizableButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D5AADD21619BB250000EF26 /* resizableButton@2x.png */; };
 		9D5AADD71619BB250000EF26 /* resizableButtonHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D5AADD31619BB250000EF26 /* resizableButtonHighlighted.png */; };
 		9D5AADD81619BB250000EF26 /* resizableButtonHighlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D5AADD41619BB250000EF26 /* resizableButtonHighlighted@2x.png */; };
+		9DAEF93E1621E71B002B0242 /* CBBezier.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DAEF93D1621E71B002B0242 /* CBBezier.m */; };
 		9DDA94DF161F4B0F0099D9C3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DDA94DE161F4B0F0099D9C3 /* QuartzCore.framework */; };
 		9DDA94F5161F68C90099D9C3 /* CBLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DDA94F4161F68C90099D9C3 /* CBLayer.m */; };
 /* End PBXBuildFile section */
@@ -76,6 +77,8 @@
 		9D5AADD21619BB250000EF26 /* resizableButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "resizableButton@2x.png"; sourceTree = "<group>"; };
 		9D5AADD31619BB250000EF26 /* resizableButtonHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resizableButtonHighlighted.png; sourceTree = "<group>"; };
 		9D5AADD41619BB250000EF26 /* resizableButtonHighlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "resizableButtonHighlighted@2x.png"; sourceTree = "<group>"; };
+		9DAEF93C1621E71B002B0242 /* CBBezier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBBezier.h; sourceTree = "<group>"; };
+		9DAEF93D1621E71B002B0242 /* CBBezier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBBezier.m; sourceTree = "<group>"; };
 		9DDA94DE161F4B0F0099D9C3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9DDA94F3161F68C90099D9C3 /* CBLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLayer.h; sourceTree = "<group>"; };
 		9DDA94F4161F68C90099D9C3 /* CBLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLayer.m; sourceTree = "<group>"; };
@@ -145,6 +148,8 @@
 				9D5AADA21618F5F90000EF26 /* MainStoryboard.storyboard */,
 				9DDA94F3161F68C90099D9C3 /* CBLayer.h */,
 				9DDA94F4161F68C90099D9C3 /* CBLayer.m */,
+				9DAEF93C1621E71B002B0242 /* CBBezier.h */,
+				9DAEF93D1621E71B002B0242 /* CBBezier.m */,
 				9D5AADA51618F5F90000EF26 /* CBViewController.h */,
 				9D5AADA61618F5F90000EF26 /* CBViewController.m */,
 				9D5AAD911618F5F90000EF26 /* Supporting Files */,
@@ -316,6 +321,7 @@
 				9D5AAD9B1618F5F90000EF26 /* CBAppDelegate.m in Sources */,
 				9D5AADA71618F5F90000EF26 /* CBViewController.m in Sources */,
 				9DDA94F5161F68C90099D9C3 /* CBLayer.m in Sources */,
+				9DAEF93E1621E71B002B0242 /* CBBezier.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
