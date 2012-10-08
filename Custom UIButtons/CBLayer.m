@@ -21,8 +21,13 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    // Set property
     _tapped = YES;
+    
+    // Force drawRect to be called (NEVER, EVER call drawRect directly)
     [self setNeedsDisplay];
+    
+    // Superclass implementation
     [super touchesBegan:touches withEvent:event];
 }
 
@@ -35,8 +40,10 @@
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    // Get the distance between the touch point and the button bounds
     CGPoint touchPoint = [[touches anyObject] locationInView:self];
     
+    // Check if the point is contained within the button bounds
     if (CGRectContainsPoint(self.bounds, touchPoint))
     {
         _tapped = YES;
@@ -58,17 +65,13 @@
 {
     if (!_setupLayers)
     {
-        self.layer.cornerRadius = 4.5f;
-        self.layer.masksToBounds = YES;
-        self.layer.borderWidth = 1;
-        self.layer.borderColor = [UIColor colorWithRed:0.77f green:0.43f blue:0.00f alpha:1.00f].CGColor;
-        
+        [self drawButton];
         [self drawInnerGlow];
         [self drawBackgroundLayer];
         [self drawHighlightBackgroundLayer];
     }
-
-
+    
+    // Hide and show the highlighted background (inverted gradient)
     if (_tapped)
     {
         _highlightBackgroundLayer.hidden = NO;
@@ -83,6 +86,19 @@
 }
 
 #pragma mark - Layer setters
+
+- (void)drawButton
+{
+    // Get the root layer (any UIView subclass comes with one) 
+    CALayer *layer = self.layer;
+    
+    // Make the root layer act as a mask for all sublayers
+    layer.masksToBounds = YES; 
+    
+    layer.cornerRadius = 4.5f;
+    layer.borderWidth = 1;
+    layer.borderColor = [UIColor colorWithRed:0.77f green:0.43f blue:0.00f alpha:1.00f].CGColor;
+}
 
 - (void)drawBackgroundLayer
 {

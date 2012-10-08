@@ -127,24 +127,6 @@
         <image name="button.png" width="280" height="36"/>
         <image name="buttonHighlighted.png" width="280" height="36"/>
     </resources>
-    <classes>
-        <class className="CBBezier" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CBBezier.h"/>
-        </class>
-        <class className="CBLayer" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CBLayer.h"/>
-        </class>
-        <class className="CBViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CBViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="fullSizeImage" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="resizableImage" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
