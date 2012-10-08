@@ -2,8 +2,8 @@
 
 @interface CBLayer ()
 
-@property (assign, nonatomic) BOOL setupLayers;
-@property (strong, nonatomic) CAGradientLayer *backgroundLayer, *highlightBackgroundLayer;
+@property (assign,nonatomic) BOOL setupLayers;
+@property (strong,nonatomic) CAGradientLayer *backgroundLayer, *highlightBackgroundLayer;
 @property (strong,nonatomic) CALayer *innerGlow;
 
 @end
@@ -86,21 +86,30 @@
 
 - (void)drawBackgroundLayer
 {
+    // Check if the property has been set already
     if (!_backgroundLayer)
     {
+        // Instantiate the gradient layer
         _backgroundLayer = [CAGradientLayer layer];
+        
+        // Set the gradient frame (make the gradient fill the whole button)
         _backgroundLayer.frame = self.bounds;
+        
+        // Set the colors
         _backgroundLayer.colors = (@[
                                    (id)[UIColor colorWithRed:0.94f green:0.82f blue:0.52f alpha:1.00f].CGColor,
                                    (id)[UIColor colorWithRed:0.91f green:0.55f blue:0.00f alpha:1.00f].CGColor
                                    
                                    
                                    ]);
+        
+        // Set the stops
         _backgroundLayer.locations = (@[
                                       @0.0f,
                                       @1.0f
                                       ]);
         
+        // Add the gradient to the layer hierarchy
         [self.layer insertSublayer:_backgroundLayer atIndex:0];
     }
 }
@@ -127,9 +136,13 @@
 {
     if (!_innerGlow)
     {
+        // Instantiate the innerGlow layer
         _innerGlow = [CALayer layer];
-        CGRect innerGlowFrame = CGRectMake(self.bounds.origin.x+1, self.bounds.origin.y+1, self.bounds.size.width-2, self.bounds.size.height-2);
+        
+        // Set the frame (1pt inset)
+        CGRect innerGlowFrame = CGRectMake(CGRectGetMinX(self.bounds)+1, CGRectGetMinY(self.bounds)+1, CGRectGetWidth(self.bounds)-2, CGRectGetHeight(self.bounds)-2);
         _innerGlow.frame = innerGlowFrame;
+        
         _innerGlow.cornerRadius= 4.5f;
         _innerGlow.borderWidth = 1;
         _innerGlow.borderColor = [[UIColor whiteColor] CGColor];
