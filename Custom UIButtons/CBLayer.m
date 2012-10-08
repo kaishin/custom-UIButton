@@ -38,13 +38,18 @@
     [super touchesEnded:touches withEvent:event];
 }
 
+// The distance from the button beyond which the former should no longer be considered tapped
+static CGFloat touchDistance = 70;
+
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     // Get the distance between the touch point and the button bounds
     CGPoint touchPoint = [[touches anyObject] locationInView:self];
     
-    // Check if the point is contained within the button bounds
-    if (CGRectContainsPoint(self.bounds, touchPoint))
+    // Define the touch area frame using the touch distance defined above
+    CGRect touchArea = CGRectMake(0, - touchDistance, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame) + touchDistance * 2);
+    
+    if (CGRectContainsPoint(touchArea, touchPoint))
     {
         _tapped = YES;
         [self setNeedsDisplay];

@@ -25,11 +25,18 @@
     [super touchesEnded:touches withEvent:event];
 }
 
+// The distance from the button beyond which the former should no longer be considered tapped
+static CGFloat touchDistance = 70;
+
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    // Get the distance between the touch point and the button bounds
     CGPoint touchPoint = [[touches anyObject] locationInView:self];
     
-    if (CGRectContainsPoint(self.bounds, touchPoint))
+    // Define the touch area frame using the touch distance defined above
+    CGRect touchArea = CGRectMake(0, - touchDistance, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame) + touchDistance * 2);
+    
+    if (CGRectContainsPoint(touchArea, touchPoint))
     {
         _tapped = YES;
         [self setNeedsDisplay];
@@ -72,17 +79,21 @@
     CGGradientRef highlightedGradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)(highlightedGradientColors), NULL);
 
     
-    // Draw Rounded Rectangle
+    // Draw rounded rectangle bezier path
     UIBezierPath *roundedRectanglePath = [UIBezierPath bezierPathWithRoundedRect: CGRectMake(0, 0, 280, 37) cornerRadius: 4];
-    CGContextSaveGState(context);
+    // Use the bezier as a clipping path
     [roundedRectanglePath addClip];
+    
+    // Use one of the two gradients depending on the state of the button
     CGGradientRef background = _tapped? highlightedGradient : gradient;
     
+    // Draw gradient within the path
     CGContextDrawLinearGradient(context, background, CGPointMake(140, 0), CGPointMake(140, 37), 0);
+    
+    // Draw border
     [borderColor setStroke];
     roundedRectanglePath.lineWidth = 2;
     [roundedRectanglePath stroke];
-    CGContextRestoreGState(context);
     
     // Draw Inner Glow
     UIBezierPath *innerGlowRect = [UIBezierPath bezierPathWithRoundedRect: CGRectMake(1.5, 1.5, 277, 34) cornerRadius: 2.5];
