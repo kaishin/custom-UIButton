@@ -3,4 +3,6 @@
 
 @interface CBLayer : UIButton
 
+@property (assign,nonatomic) BOOL tapped;
+
 @end

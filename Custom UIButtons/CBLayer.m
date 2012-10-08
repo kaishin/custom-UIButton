@@ -2,7 +2,7 @@
 
 @interface CBLayer ()
 
-@property (assign, nonatomic) BOOL tapped, setupLayers;
+@property (assign, nonatomic) BOOL setupLayers;
 @property (strong, nonatomic) CAGradientLayer *backgroundLayer, *highlightBackgroundLayer;
 @property (strong,nonatomic) CALayer *innerGlow;
 
@@ -15,6 +15,41 @@
 + (CBLayer *)buttonWithType:(UIButtonType)type
 {
     return [super buttonWithType:UIButtonTypeCustom];
+}
+
+#pragma mark - Touch event overrides
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    _tapped = YES;
+    [self setNeedsDisplay];
+    [super touchesBegan:touches withEvent:event];
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    _tapped = NO;
+    [self setNeedsDisplay];
+    [super touchesEnded:touches withEvent:event];
+}
+
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    CGPoint touchPoint = [[touches anyObject] locationInView:self];
+    
+    if (CGRectContainsPoint(self.bounds, touchPoint))
+    {
+        _tapped = YES;
+        [self setNeedsDisplay];
+    }
+    
+    else
+    {
+        _tapped = NO;
+        [self setNeedsDisplay];
+    }
+    
+    [super touchesMoved:touches withEvent:event];
 }
 
 #pragma mark -
@@ -57,7 +92,9 @@
         _backgroundLayer.frame = self.bounds;
         _backgroundLayer.colors = (@[
                                    (id)[UIColor colorWithRed:0.94f green:0.82f blue:0.52f alpha:1.00f].CGColor,
-                                   (id)[UIColor colorWithRed:0.91f green:0.58f blue:0.00f alpha:1.00f].CGColor
+                                   (id)[UIColor colorWithRed:0.91f green:0.55f blue:0.00f alpha:1.00f].CGColor
+                                   
+                                   
                                    ]);
         _backgroundLayer.locations = (@[
                                       @0.0f,
@@ -75,7 +112,7 @@
         _highlightBackgroundLayer = [CAGradientLayer layer];
         _highlightBackgroundLayer.frame = self.bounds;
         _highlightBackgroundLayer.colors = (@[
-                           (id)[UIColor colorWithRed:0.91f green:0.58f blue:0.00f alpha:1.00f].CGColor,
+                           (id)[UIColor colorWithRed:0.91f green:0.55f blue:0.00f alpha:1.00f].CGColor,
                            (id)[UIColor colorWithRed:0.94f green:0.82f blue:0.52f alpha:1.00f].CGColor
                            ]);
         _highlightBackgroundLayer.locations = (@[
@@ -100,41 +137,6 @@
         
         [self.layer insertSublayer:_innerGlow atIndex:2];
     }
-}
-
-#pragma mark - Touch event overrides
-
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    _tapped = YES;
-    [self setNeedsDisplay];
-    [super touchesBegan:touches withEvent:event];
-}
-
--(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    _tapped = NO;
-    [self setNeedsDisplay];
-    [super touchesEnded:touches withEvent:event];
-}
-
--(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    CGPoint touchPoint = [[touches anyObject] locationInView:self];
-    
-    if (CGRectContainsPoint(self.bounds, touchPoint))
-    {
-        _tapped = YES;
-        [self setNeedsDisplay];
-    }
-    
-    else
-    {
-        _tapped = NO;
-        [self setNeedsDisplay];
-    }
-    
-    [super touchesMoved:touches withEvent:event];
 }
 
 @end
