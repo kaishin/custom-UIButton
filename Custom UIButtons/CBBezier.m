@@ -61,17 +61,15 @@
                                (id)topColor.CGColor,
                                (id)bottomColor.CGColor
                                ]);
+
+    CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)(gradientColors), NULL);
     
-    CGFloat gradientLocations[] = {0, 1};
-    CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)(gradientColors), gradientLocations);
-    
-    NSArray* highlightedGradientColors = (@[
+    NSArray *highlightedGradientColors = (@[
                                           (id)bottomColor.CGColor,
                                           (id)topColor.CGColor
                                           ]);
     
-    CGFloat highlightedGradientLocations[] = {0, 1};
-    CGGradientRef highlightedGradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)(highlightedGradientColors), highlightedGradientLocations);
+    CGGradientRef highlightedGradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)(highlightedGradientColors), NULL);
 
     
     // Draw Rounded Rectangle
@@ -87,7 +85,7 @@
     CGContextRestoreGState(context);
     
     // Draw Inner Glow
-    UIBezierPath* innerGlowRect = [UIBezierPath bezierPathWithRoundedRect: CGRectMake(1.5, 1.5, 277, 34) cornerRadius: 2.5];
+    UIBezierPath *innerGlowRect = [UIBezierPath bezierPathWithRoundedRect: CGRectMake(1.5, 1.5, 277, 34) cornerRadius: 2.5];
     [innerGlow setStroke];
     innerGlowRect.lineWidth = 1;
     [innerGlowRect stroke];
