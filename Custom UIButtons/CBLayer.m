@@ -161,7 +161,7 @@ static CGFloat touchDistance = 70;
         _innerGlow = [CALayer layer];
         
         // Set the frame (1pt inset)
-        CGRect innerGlowFrame = CGRectMake(CGRectGetMinX(self.bounds)+1, CGRectGetMinY(self.bounds)+1, CGRectGetWidth(self.bounds)-2, CGRectGetHeight(self.bounds)-2);
+        CGRect innerGlowFrame = CGRectInset(self.bounds, 1, 1);
         _innerGlow.frame = innerGlowFrame;
         
         _innerGlow.cornerRadius= 4.5f;
