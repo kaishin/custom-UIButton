@@ -17,9 +17,12 @@
     return [super buttonWithType:UIButtonTypeCustom];
 }
 
-- (id) initWithCoder:(NSCoder *)coder {
+- (id)initWithCoder:(NSCoder *)coder
+{
 	self = [super initWithCoder:coder];
-	if (self) {
+    
+	if (self)
+    {
 		[self drawButton];
         [self drawInnerGlow];
         [self drawBackgroundLayer];
@@ -27,24 +30,23 @@
 		
 		_highlightBackgroundLayer.hidden = YES;
 	}
+    
 	return self;
 }
 
-- (void) layoutSubviews
+- (void)layoutSubviews
 {
-	// Set the frame (1pt inset)
-	CGRect innerGlowFrame = CGRectInset(self.bounds, 1, 1);
-	_innerGlow.frame = innerGlowFrame;
-	
+	// Set layer frames
+	_innerGlow.frame = CGRectInset(self.bounds, 1, 1);
 	_backgroundLayer.frame = self.bounds;
 	_highlightBackgroundLayer.frame = self.bounds;
 	
 	[super layoutSubviews];
 }
 
-- (void) setHighlighted:(BOOL)highlighted
+- (void)setHighlighted:(BOOL)highlighted
 {
-	// set property without implicit animation
+	// Set property without implicit animation
 	[CATransaction begin];
 	[CATransaction setDisableActions:YES];
 	_highlightBackgroundLayer.hidden = !highlighted;
@@ -57,11 +59,8 @@
 
 - (void)drawButton
 {
-    // Get the root layer (any UIView subclass comes with one) 
+    // Get the root layer (any UIView subclass comes with one)
     CALayer *layer = self.layer;
-    
-    // Make the root layer act as a mask for all sublayers
-    layer.masksToBounds = YES; 
     
     layer.cornerRadius = 4.5f;
     layer.borderWidth = 1;
@@ -101,13 +100,13 @@
     {
         _highlightBackgroundLayer = [CAGradientLayer layer];
         _highlightBackgroundLayer.colors = (@[
-                           (id)[UIColor colorWithRed:0.91f green:0.55f blue:0.00f alpha:1.00f].CGColor,
-                           (id)[UIColor colorWithRed:0.94f green:0.82f blue:0.52f alpha:1.00f].CGColor
-                           ]);
+                                            (id)[UIColor colorWithRed:0.91f green:0.55f blue:0.00f alpha:1.00f].CGColor,
+                                            (id)[UIColor colorWithRed:0.94f green:0.82f blue:0.52f alpha:1.00f].CGColor
+                                            ]);
         _highlightBackgroundLayer.locations = (@[
-                              @0.0f,
-                              @1.0f
-                              ]);
+                                               @0.0f,
+                                               @1.0f
+                                               ]);
         [self.layer insertSublayer:_highlightBackgroundLayer atIndex:1];
     }
 }
