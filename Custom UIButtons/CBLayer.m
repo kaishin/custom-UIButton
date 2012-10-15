@@ -2,7 +2,6 @@
 
 @interface CBLayer ()
 
-@property (assign,nonatomic) BOOL setupLayers;
 @property (strong,nonatomic) CAGradientLayer *backgroundLayer, *highlightBackgroundLayer;
 @property (strong,nonatomic) CALayer *innerGlow;
 
@@ -19,8 +18,10 @@
 
 - (id)initWithCoder:(NSCoder *)coder
 {
+    // Call the parent implementation of initWithCoder
 	self = [super initWithCoder:coder];
     
+    // Custom drawing methods
 	if (self)
     {
 		[self drawButton];
@@ -36,19 +37,25 @@
 
 - (void)layoutSubviews
 {
-	// Set layer frames
-	_innerGlow.frame = CGRectInset(self.bounds, 1, 1);
-	_backgroundLayer.frame = self.bounds;
-	_highlightBackgroundLayer.frame = self.bounds;
+    // Set inner glow frame (1pt inset)
+    _innerGlow.frame = CGRectInset(self.bounds, 1, 1);
+    
+    // Set gradient frame (fill the whole button))
+    _backgroundLayer.frame = self.bounds;
+    
+    // Set inverted gradient frame
+    _highlightBackgroundLayer.frame = self.bounds;
 	
 	[super layoutSubviews];
 }
 
 - (void)setHighlighted:(BOOL)highlighted
 {
-	// Set property without implicit animation
+	// Disable implicit animation
 	[CATransaction begin];
 	[CATransaction setDisableActions:YES];
+    
+    // HHide/show inverted gradient
 	_highlightBackgroundLayer.hidden = !highlighted;
 	[CATransaction commit];
 	
