@@ -9,47 +9,14 @@
     return [super buttonWithType:UIButtonTypeCustom];
 }
 
+- (void)setHighlighted:(BOOL)highlighted
+{
+	[self setNeedsDisplay];
+	[super setHighlighted:highlighted];
+}
+
 #pragma mark - Touch event overrides
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    _tapped = YES;
-    [self setNeedsDisplay];
-    [super touchesBegan:touches withEvent:event];
-}
-
--(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    _tapped = NO;
-    [self setNeedsDisplay];
-    [super touchesEnded:touches withEvent:event];
-}
-
-// The distance from the button beyond which the former should no longer be considered tapped
-static CGFloat touchDistance = 70;
-
--(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    // Get the distance between the touch point and the button bounds
-    CGPoint touchPoint = [[touches anyObject] locationInView:self];
-    
-    // Define the touch area frame using the touch distance defined above
-    CGRect touchArea = CGRectMake(0, - touchDistance, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame) + touchDistance * 2);
-    
-    if (CGRectContainsPoint(touchArea, touchPoint))
-    {
-        _tapped = YES;
-        [self setNeedsDisplay];
-    }
-    
-    else
-    {
-        _tapped = NO;
-        [self setNeedsDisplay];
-    }
-    
-    [super touchesMoved:touches withEvent:event];
-}
 
 - (void)drawRect:(CGRect)rect
 {
@@ -85,7 +52,7 @@ static CGFloat touchDistance = 70;
     [roundedRectanglePath addClip];
     
     // Use one of the two gradients depending on the state of the button
-    CGGradientRef background = _tapped? highlightedGradient : gradient;
+    CGGradientRef background = self.highlighted? highlightedGradient : gradient;
     
     // Draw gradient within the path
     CGContextDrawLinearGradient(context, background, CGPointMake(140, 0), CGPointMake(140, 37), 0);

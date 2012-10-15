@@ -3,6 +3,4 @@
 
 @interface CBBezier : UIButton
 
-@property (assign,nonatomic) BOOL tapped;
-
 @end
