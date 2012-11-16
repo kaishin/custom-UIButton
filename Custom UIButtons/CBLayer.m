@@ -69,7 +69,7 @@
     // Get the root layer (any UIView subclass comes with one)
     CALayer *layer = self.layer;
     
-    layer.cornerRadius = 4.5f;
+    layer.cornerRadius = 5;
     layer.borderWidth = 1;
     layer.borderColor = [UIColor colorWithRed:0.77f green:0.43f blue:0.00f alpha:1.00f].CGColor;
 }
@@ -125,7 +125,7 @@
         // Instantiate the innerGlow layer
         _innerGlow = [CALayer layer];
         
-        _innerGlow.cornerRadius= 4.5f;
+        _innerGlow.cornerRadius= 4;
         _innerGlow.borderWidth = 1;
         _innerGlow.borderColor = [[UIColor whiteColor] CGColor];
         _innerGlow.opacity = 0.5;

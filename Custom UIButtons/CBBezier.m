@@ -47,7 +47,7 @@
 
     
     // Draw rounded rectangle bezier path
-    UIBezierPath *roundedRectanglePath = [UIBezierPath bezierPathWithRoundedRect: CGRectMake(0, 0, 280, 37) cornerRadius: 4];
+    UIBezierPath *roundedRectanglePath = [UIBezierPath bezierPathWithRoundedRect: CGRectMake(0, 0, 280, 37) cornerRadius: 5];
     // Use the bezier as a clipping path
     [roundedRectanglePath addClip];
     
@@ -63,7 +63,7 @@
     [roundedRectanglePath stroke];
     
     // Draw Inner Glow
-    UIBezierPath *innerGlowRect = [UIBezierPath bezierPathWithRoundedRect: CGRectMake(1.5, 1.5, 277, 34) cornerRadius: 2.5];
+    UIBezierPath *innerGlowRect = [UIBezierPath bezierPathWithRoundedRect: CGRectMake(1.5, 1.5, 277, 34) cornerRadius: 4];
     [innerGlow setStroke];
     innerGlowRect.lineWidth = 1;
     [innerGlowRect stroke];
