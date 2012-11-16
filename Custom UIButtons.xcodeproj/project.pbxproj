@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D39A8E91655D90D00943163 /* CBHybrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D39A8E81655D90D00943163 /* CBHybrid.m */; };
 		9D5AAD8B1618F5F90000EF26 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D5AAD8A1618F5F90000EF26 /* UIKit.framework */; };
 		9D5AAD8D1618F5F90000EF26 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D5AAD8C1618F5F90000EF26 /* Foundation.framework */; };
 		9D5AAD8F1618F5F90000EF26 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D5AAD8E1618F5F90000EF26 /* CoreGraphics.framework */; };
@@ -57,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9D39A8E71655D90D00943163 /* CBHybrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBHybrid.h; sourceTree = "<group>"; };
+		9D39A8E81655D90D00943163 /* CBHybrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBHybrid.m; sourceTree = "<group>"; };
 		9D5AAD861618F5F90000EF26 /* Custom UIButtons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Custom UIButtons.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D5AAD8A1618F5F90000EF26 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9D5AAD8C1618F5F90000EF26 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -170,6 +173,8 @@
 				9DDA94F4161F68C90099D9C3 /* CBLayer.m */,
 				9DAEF93C1621E71B002B0242 /* CBBezier.h */,
 				9DAEF93D1621E71B002B0242 /* CBBezier.m */,
+				9D39A8E71655D90D00943163 /* CBHybrid.h */,
+				9D39A8E81655D90D00943163 /* CBHybrid.m */,
 				9D5AADA51618F5F90000EF26 /* CBViewController.h */,
 				9D5AADA61618F5F90000EF26 /* CBViewController.m */,
 				9D5AAD911618F5F90000EF26 /* Supporting Files */,
@@ -370,6 +375,7 @@
 				9D5AADA71618F5F90000EF26 /* CBViewController.m in Sources */,
 				9DDA94F5161F68C90099D9C3 /* CBLayer.m in Sources */,
 				9DAEF93E1621E71B002B0242 /* CBBezier.m in Sources */,
+				9D39A8E91655D90D00943163 /* CBHybrid.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
