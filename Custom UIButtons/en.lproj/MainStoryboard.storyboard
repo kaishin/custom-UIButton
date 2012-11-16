@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -12,19 +12,15 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Custom UIButton" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBO-Rb-wYc">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Custom UIButton" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jBO-Rb-wYc">
+                                <rect key="frame" x="0.0" y="25" width="320" height="46"/>
                                 <color key="backgroundColor" red="0.70505839646464641" green="0.025684838094524976" blue="0.038626514434835411" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="hIL-bN-XTb"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="25"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wDh-la-ziX">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="ji6-Xi-fSf"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wDh-la-ziX">
+                                <rect key="frame" x="20" y="108" width="280" height="37"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="19"/>
                                 <size key="titleShadowOffset" width="0.0" height="1"/>
                                 <state key="normal" title="Full sized image" backgroundImage="button.png">
@@ -36,10 +32,8 @@
                                     <color key="titleShadowColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIT-MX-1PF">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="Mg9-en-34Z"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uIT-MX-1PF">
+                                <rect key="frame" x="20" y="164" width="280" height="37"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="19"/>
                                 <size key="titleShadowOffset" width="0.0" height="1"/>
                                 <state key="normal" title="Full sized image (code)">
@@ -51,10 +45,8 @@
                                     <color key="titleShadowColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XCA-Kj-Jbf">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="9e0-nf-Vzf"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="XCA-Kj-Jbf">
+                                <rect key="frame" x="20" y="219" width="280" height="37"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="19"/>
                                 <size key="titleShadowOffset" width="0.0" height="1"/>
                                 <state key="normal" title="Resizable Image">
@@ -66,13 +58,11 @@
                                     <color key="titleShadowColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lme-0S-ubJ" customClass="CBLayer">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="CEF-nH-zhf"/>
-                                </constraints>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lme-0S-ubJ" customClass="CBLayer">
+                                <rect key="frame" x="20" y="293" width="280" height="37"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="19"/>
                                 <size key="titleShadowOffset" width="0.0" height="1"/>
-                                <state key="normal" title="drawRect &amp; CALayer">
+                                <state key="normal" title="CALayer">
                                     <color key="titleColor" red="0.52156865600000002" green="0.2257233075" blue="0.08455855508" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.20403855849999999" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
@@ -81,10 +71,8 @@
                                     <color key="titleShadowColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gz-0a-1GT" customClass="CBBezier">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="37" type="user" id="dup-xS-p5A"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0gz-0a-1GT" customClass="CBBezier">
+                                <rect key="frame" x="20" y="348" width="280" height="37"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="19"/>
                                 <size key="titleShadowOffset" width="0.0" height="1"/>
                                 <state key="normal" title="drawRect &amp; CGContext">
@@ -96,13 +84,11 @@
                                     <color key="titleShadowColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ep-or-v8B" customClass="CBHybrid">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="37" type="user" id="pHl-Be-EYG"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5Ep-or-v8B" customClass="CBHybrid">
+                                <rect key="frame" x="20" y="404" width="280" height="37"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="19"/>
                                 <size key="titleShadowOffset" width="0.0" height="1"/>
-                                <state key="normal" title="CGContext">
+                                <state key="normal" title="CGContext-generated image">
                                     <color key="titleColor" red="0.52156865600000002" green="0.2257233075" blue="0.08455855508" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.20403855849999999" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
@@ -113,28 +99,6 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="jBO-Rb-wYc" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="3aA-Rs-fR6"/>
-                            <constraint firstItem="jBO-Rb-wYc" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="8Hg-2l-odq"/>
-                            <constraint firstItem="lme-0S-ubJ" firstAttribute="top" secondItem="3" secondAttribute="top" constant="280" type="user" id="CXa-g7-ekI"/>
-                            <constraint firstAttribute="trailing" secondItem="5Ep-or-v8B" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="DkF-BD-mRk"/>
-                            <constraint firstAttribute="trailing" secondItem="0gz-0a-1GT" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="KQw-iG-JIc"/>
-                            <constraint firstItem="jBO-Rb-wYc" firstAttribute="top" secondItem="3" secondAttribute="top" constant="25" id="MHe-24-2r3"/>
-                            <constraint firstItem="lme-0S-ubJ" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="NLe-o7-ih7"/>
-                            <constraint firstItem="uIT-MX-1PF" firstAttribute="top" secondItem="3" secondAttribute="top" constant="172" id="PWL-mO-bfW"/>
-                            <constraint firstItem="uIT-MX-1PF" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="YLS-Ac-IbH"/>
-                            <constraint firstItem="0gz-0a-1GT" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="bNO-oa-5cU"/>
-                            <constraint firstItem="wDh-la-ziX" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="dBW-dg-OFZ"/>
-                            <constraint firstAttribute="trailing" secondItem="lme-0S-ubJ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="f4k-Kn-Wre"/>
-                            <constraint firstAttribute="trailing" secondItem="uIT-MX-1PF" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="gB5-R4-78g"/>
-                            <constraint firstItem="0gz-0a-1GT" firstAttribute="top" secondItem="3" secondAttribute="top" constant="336" type="user" id="gwO-he-loO"/>
-                            <constraint firstItem="XCA-Kj-Jbf" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="k3E-Rd-zAn"/>
-                            <constraint firstAttribute="trailing" secondItem="XCA-Kj-Jbf" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="kd9-Gh-MzZ"/>
-                            <constraint firstItem="5Ep-or-v8B" firstAttribute="top" secondItem="3" secondAttribute="top" constant="391" type="user" id="wrl-cZ-pyA"/>
-                            <constraint firstItem="wDh-la-ziX" firstAttribute="top" secondItem="3" secondAttribute="top" constant="121" id="ytU-nT-30U"/>
-                            <constraint firstItem="5Ep-or-v8B" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="z0q-OC-UbW"/>
-                            <constraint firstItem="XCA-Kj-Jbf" firstAttribute="top" secondItem="3" secondAttribute="top" constant="225" id="zks-AC-MnH"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="fullSizeImage" destination="uIT-MX-1PF" id="ocx-zt-aTs"/>
@@ -165,9 +129,6 @@
                 <relationship kind="outlet" name="fullSizeImage" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="resizableImage" candidateClass="UIButton"/>
             </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
