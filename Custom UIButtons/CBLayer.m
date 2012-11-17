@@ -55,7 +55,7 @@
 	[CATransaction begin];
 	[CATransaction setDisableActions:YES];
     
-    // HHide/show inverted gradient
+    // Hide/show inverted gradient
 	_highlightBackgroundLayer.hidden = !highlighted;
 	[CATransaction commit];
 	
