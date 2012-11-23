@@ -2,12 +2,18 @@
 
 @implementation CBHybrid
 
+
+// Resizable background image for normal state
 static UIImage *gBackgroundImage;
+
+// Resizable background image for highlighted state
 static UIImage *gBackgroundImageHighlighted;
+
+// Background image border radius and height
 static int borderRadius = 5;
 static int height = 37;
 
-#pragma mark - UIButton Overrides
+#pragma mark - Overrides
 
 + (CBHybrid *)buttonWithType:(UIButtonType)type
 {
@@ -23,23 +29,27 @@ static int height = 37;
     return self;
 }
 
-#pragma mark - Touch event overrides
+#pragma mark - Helper Methods
 
 - (void)setupBackgrounds {
     
+    // Generate background images if necessary
     if (!gBackgroundImage && !gBackgroundImageHighlighted) {
         gBackgroundImage = [[self drawBackgroundImageHighlighted:NO] resizableImageWithCapInsets:UIEdgeInsetsMake(borderRadius, borderRadius, borderRadius, borderRadius) resizingMode:UIImageResizingModeStretch];
         gBackgroundImageHighlighted = [[self drawBackgroundImageHighlighted:YES] resizableImageWithCapInsets:UIEdgeInsetsMake(borderRadius, borderRadius, borderRadius, borderRadius) resizingMode:UIImageResizingModeStretch];
     }
     
+    // Set background for the button instance
     [self setBackgroundImage:gBackgroundImage forState:UIControlStateNormal];
     [self setBackgroundImage:gBackgroundImageHighlighted forState:UIControlStateHighlighted];
 }
 
 - (UIImage *)drawBackgroundImageHighlighted:(BOOL)highlighted {
     
+    // Get image width with a 1pt stretchable area
     float width = 1 + (borderRadius * 2);
     
+    // Create bitmap context and color space
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(width, height), NO, 0.0);
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
@@ -68,6 +78,7 @@ static int height = 37;
     
     // Draw rounded rectangle bezier path
     UIBezierPath *roundedRectanglePath = [UIBezierPath bezierPathWithRoundedRect: CGRectMake(0, 0, width, height) cornerRadius: borderRadius];
+    
     // Use the bezier as a clipping path
     [roundedRectanglePath addClip];
     
@@ -91,9 +102,8 @@ static int height = 37;
     // Output as Image
     UIImage* backgroundImage = UIGraphicsGetImageFromCurrentImageContext();
     
-    UIGraphicsEndImageContext();
-    
     // Cleanup
+    UIGraphicsEndImageContext();
     CGGradientRelease(gradient);
     CGGradientRelease(highlightedGradient);
     CGColorSpaceRelease(colorSpace);
