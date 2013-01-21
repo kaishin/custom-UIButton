@@ -42,10 +42,26 @@
 		9D9738F6162834C500F1E992 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D9738EC162834C500F1E992 /* Icon@2x.png */; };
 		9D9738F7162834C500F1E992 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D9738ED162834C500F1E992 /* iTunesArtwork.png */; };
 		9D9738F8162834C500F1E992 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D9738EE162834C500F1E992 /* iTunesArtwork@2x.png */; };
+		9DA9096F16ADD4CE0029BA1B /* PXEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DA9096E16ADD4CE0029BA1B /* PXEngine.framework */; };
+		9DA9097616ADDDD30029BA1B /* default.scss in Resources */ = {isa = PBXBuildFile; fileRef = 9DA9097516ADDDD30029BA1B /* default.scss */; };
 		9DAEF93E1621E71B002B0242 /* CBBezier.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DAEF93D1621E71B002B0242 /* CBBezier.m */; };
 		9DDA94DF161F4B0F0099D9C3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DDA94DE161F4B0F0099D9C3 /* QuartzCore.framework */; };
 		9DDA94F5161F68C90099D9C3 /* CBLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DDA94F4161F68C90099D9C3 /* CBLayer.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		9DA9097416ADDC3E0029BA1B /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.scss";
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+				"${TARGET_BUILD_DIR}/${INPUT_FILE_BASE}.css",
+			);
+			script = "source /Users/reda/.rvm/environments/default\n${GEM_HOME}/bin/sass \"${INPUT_FILE_PATH}\" ${TARGET_BUILD_DIR}/${INPUT_FILE_BASE}.css";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
 		9D5AADB21618F5F90000EF26 /* PBXContainerItemProxy */ = {
@@ -100,6 +116,9 @@
 		9D9738EC162834C500F1E992 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		9D9738ED162834C500F1E992 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		9D9738EE162834C500F1E992 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		9DA9096E16ADD4CE0029BA1B /* PXEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PXEngine.framework; sourceTree = "<group>"; };
+		9DA9097116ADD6110029BA1B /* LicenseInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LicenseInfo.h; sourceTree = "<group>"; };
+		9DA9097516ADDDD30029BA1B /* default.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = default.scss; sourceTree = "<group>"; };
 		9DAEF93C1621E71B002B0242 /* CBBezier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBBezier.h; sourceTree = "<group>"; };
 		9DAEF93D1621E71B002B0242 /* CBBezier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBBezier.m; sourceTree = "<group>"; };
 		9DDA94DE161F4B0F0099D9C3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -116,6 +135,7 @@
 				9D5AAD8B1618F5F90000EF26 /* UIKit.framework in Frameworks */,
 				9D5AAD8D1618F5F90000EF26 /* Foundation.framework in Frameworks */,
 				9D5AAD8F1618F5F90000EF26 /* CoreGraphics.framework in Frameworks */,
+				9DA9096F16ADD4CE0029BA1B /* PXEngine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +174,7 @@
 		9D5AAD891618F5F90000EF26 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9DA9096E16ADD4CE0029BA1B /* PXEngine.framework */,
 				9DDA94DE161F4B0F0099D9C3 /* QuartzCore.framework */,
 				9D5AAD8A1618F5F90000EF26 /* UIKit.framework */,
 				9D5AAD8C1618F5F90000EF26 /* Foundation.framework */,
@@ -185,11 +206,13 @@
 		9D5AAD911618F5F90000EF26 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9DA9097716ADDDE00029BA1B /* Sass */,
 				9D9738E4162834B400F1E992 /* Images */,
 				9D5AAD921618F5F90000EF26 /* Custom UIButtons-Info.plist */,
 				9D5AAD931618F5F90000EF26 /* InfoPlist.strings */,
 				9D5AAD961618F5F90000EF26 /* main.m */,
 				9D5AAD981618F5F90000EF26 /* Custom UIButtons-Prefix.pch */,
+				9DA9097116ADD6110029BA1B /* LicenseInfo.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -241,6 +264,14 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		9DA9097716ADDDE00029BA1B /* Sass */ = {
+			isa = PBXGroup;
+			children = (
+				9DA9097516ADDDD30029BA1B /* default.scss */,
+			);
+			name = Sass;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -253,6 +284,7 @@
 				9D5AAD841618F5F90000EF26 /* Resources */,
 			);
 			buildRules = (
+				9DA9097416ADDC3E0029BA1B /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -336,6 +368,7 @@
 				9D9738F6162834C500F1E992 /* Icon@2x.png in Resources */,
 				9D9738F7162834C500F1E992 /* iTunesArtwork.png in Resources */,
 				9D9738F8162834C500F1E992 /* iTunesArtwork@2x.png in Resources */,
+				9DA9097616ADDDD30029BA1B /* default.scss in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +481,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -469,6 +503,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -477,6 +512,10 @@
 		9D5AADC01618F5F90000EF26 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Custom UIButtons/Custom UIButtons-Prefix.pch";
 				INFOPLIST_FILE = "Custom UIButtons/Custom UIButtons-Info.plist";
@@ -488,6 +527,10 @@
 		9D5AADC11618F5F90000EF26 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Custom UIButtons/Custom UIButtons-Prefix.pch";
 				INFOPLIST_FILE = "Custom UIButtons/Custom UIButtons-Info.plist";

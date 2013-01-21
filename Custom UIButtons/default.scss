@@ -1,0 +1,22 @@
+%button-style {
+    border-color: rgba(190.00, 103.00, 0.00, 1.00);
+    border-radius: 5px;
+    border-width: 1px;
+    box-shadow: inset 0 1.5px 0 rgba(255.00, 255.00, 255.00, 0.5), inset 0 -1.5px 0 rgba(255.00, 255.00, 255.00, 0.5), inset -1.5px 0 0 rgba(255.00, 255.00, 255.00, 0.5), inset 1.5px 0 0 rgba(255.00, 255.00, 255.00, 0.5);
+    font-family: "Avenir Next Condensed";
+    color: rgba(128.00, 64.00, 0.00, 1.00);
+    font-size: 19px;
+    font-weight: bold;
+    height: 37px;
+}
+
+#pixateButton {
+    @extend %button-style;
+    background-color: linear-gradient(rgba(222.00, 141.00, 0.00, 1.00), rgba(234.00, 201.00, 71.00, 1.00));
+
+
+    &:highlighted {
+      @extend %button-style;
+      background-color: linear-gradient(rgba(234.00, 201.00, 71.00, 1.00), rgba(222.00, 141.00, 0.00, 1.00));
+    }
+}

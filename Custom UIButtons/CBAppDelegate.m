@@ -7,12 +7,17 @@
 //
 
 #import "CBAppDelegate.h"
+#import <PXEngine/PXEngine.h>
+#import "LicenseInfo.h"
 
 @implementation CBAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [PXEngine licenseKey:@LICENSE_SERIAL forUser:@LICENSE_EMAIL];
+    [PXStylesheet currentApplicationStylesheet].monitorChanges = YES;
+    NSLog(@"%@", [PXStylesheet currentApplicationStylesheet].filePath);
     return YES;
 }
 							
